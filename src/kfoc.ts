@@ -6,14 +6,27 @@ type SchemaConformant<S extends Schema> = {
   [k in keyof S]?: S[k][number];
 };
 
+/** Schema conformant codec. */
 interface Codec<S extends Schema> {
+  /**
+   * Decodes the provided string into a schema conformant object.
+   * @param s String to be decoded.
+   */
   decode: (s: string) => SchemaConformant<S>;
+  /**
+   * Encodes the provided schema conformant object into a string.
+   * @param obj Object to be encoded.
+   */
   encode: (obj: Record<string, unknown>) => string;
 }
 
 const emptySchemaEncoder = () => '';
 const emptySchemaDecoder = () => ({});
 
+/**
+ * Creates a codec using the provided schema.
+ * @param schema Schema for the codec.
+ */
 const getCodec = <S extends Schema>(schema: S) => {
   const encoding: Record<string, Record<string, [number, number]>> = Object.create(null);
   const decoding: Array<Array<[string, Value]>> = [];
