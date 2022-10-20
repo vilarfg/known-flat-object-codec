@@ -62,7 +62,6 @@
   "module": "dist/module/index.js",
   "name": "known-flat-object-codec",
   "packageManager": "pnpm@7.13.5",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vilarfg/known-flat-object-codec.git"
