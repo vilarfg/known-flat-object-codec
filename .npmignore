@@ -2,10 +2,7 @@
 .husky/
 .vscode/
 coverage/
-dist/main/*.d.ts
-dist/main/*.d.ts.map
-dist/tsconfig.cjs.tsbuildinfo
-dist/tsconfig.tsbuildinfo
+dist/
 docs/
 src/
 tests/

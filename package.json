@@ -42,7 +42,8 @@
     "pnpm": ">= 7.13.5"
   },
   "files": [
-    "dist"
+    "dist/main/*.js*",
+    "dist/module/*"
   ],
   "homepage": "https://github.com/vilarfg/known-flat-object-codec#readme",
   "keywords": [
@@ -52,7 +53,10 @@
   ],
   "license": "MIT",
   "lint-staged": {
-    "*.{ts}": [
+    "*.json": [
+      "prettier --write"
+    ],
+    "*.ts": [
       "prettier --write",
       "eslint --fix",
       "git add"
